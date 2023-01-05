@@ -25,3 +25,4 @@ Homestead.json
 # ここから追記
 .DS_Store
 logs/
+share-images/
