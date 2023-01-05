@@ -17,7 +17,7 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      # - ./share-images:/var/www/share-images
+      - ./share-images:/var/www/share-images
       - ./logs:/var/log/nginx
 
 networks:

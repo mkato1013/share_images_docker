@@ -46,8 +46,8 @@ COPY define/nginx/default.conf /etc/nginx/sites-enabled/
 COPY define/supervisor/supervisord.conf /etc/supervisord.conf
 COPY define/supervisor/conf.d /etc/supervisord.d
 
-#RUN mkdir share-images-server
-#RUN cd /var/www/share-images-server ; chmod 777 -R storage
-#COPY ./share-images-server /var/www/share-images-server
-WORKDIR /var/www/share-images-server
+RUN mkdir share-images
+COPY ./share-images /var/www/share-images
+RUN cd /var/www/share-images ; chmod 777 -R storage
+WORKDIR /var/www/share-images
 CMD ["/usr/bin/supervisord", "-c",  "/etc/supervisord.conf"]
