@@ -1,0 +1,27 @@
+version: "3.5"
+services:
+  share-images:
+    # platform: linux/amd64
+    build:
+      context: ./
+      dockerfile: define/Dockerfile
+    hostname: share-images
+    container_name: share-images
+    environment:
+      TZ: Asia/Tokyo
+    ports:
+      - "20181:80"
+    networks:
+      - mariadb_default
+      # - reverseproxy_default
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      # - ./share-images-server:/var/www/share-images-server
+      - ./logs:/var/log/nginx
+
+networks:
+  mariadb_default:
+    external: true
+  # reverseproxy_default:
+    # external: true
