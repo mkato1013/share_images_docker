@@ -1,7 +1,9 @@
 FROM php:8.1-fpm
 
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+
 RUN apt-get update \
-    && apt-get install -y vim unzip git wget \
+    && apt-get install -y vim unzip git wget nodejs \
     libzip-dev libpq-dev libonig-dev libmcrypt-dev mariadb-client \
     libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
     libfreetype6-dev \
