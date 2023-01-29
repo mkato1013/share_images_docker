@@ -30,7 +30,7 @@ $ cd mariadb
 $ docker-compose up -d
 ```
 
-### pgame_localのDB作成
+### shareimages_localのDB作成
 - DB構築
 
 ```
