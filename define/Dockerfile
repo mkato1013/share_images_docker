@@ -11,7 +11,8 @@ RUN apt-get update \
     libmcrypt-dev \
     libpng-dev \
     vim less \
-    && docker-php-ext-install zip pdo_mysql pdo_mysql mysqli mbstring iconv opcache \
+    && docker-php-ext-install zip pdo_mysql pdo_mysql mysqli mbstring iconv \
+    # && docker-php-ext-install zip pdo_mysql pdo_mysql mysqli mbstring iconv opcache \
     && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd exif
 
